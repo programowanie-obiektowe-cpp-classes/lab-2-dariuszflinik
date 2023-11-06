@@ -15,13 +15,13 @@ class ResourceManager
         ResourceManager(const ResourceManager& t){
             resource = new Resource(*t.resource); 
             }
-        /*
+        
         ResourceManager& operator = (const ResourceManager& t)
         {
             resource = t.resource; 
             return *this;
         }
-        */
+        
     private: 
         Resource* resource; 
 };
