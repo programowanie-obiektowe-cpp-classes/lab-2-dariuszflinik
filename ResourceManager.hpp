@@ -18,7 +18,7 @@ class ResourceManager
         }
         ResourceManager& operator=(const ResourceManager& t){
             *resource = *t.resource; 
-            return nullptr; 
+            t.resource = nullptr; 
         }
         
         
