@@ -12,13 +12,14 @@ class ResourceManager
         double get(){
             return resource->get(); 
         }
-
-        ResourceManager& operator = (const ResourceManager& t){
-            delete resource; 
+        ResourceManager& operator = (const ResourceManager t){return *this;}
+        /*
+        ResourceManager& operator = (const ResourceManager& t)
+        {
             resource = t.resource; 
             return *this;
-            }
-    
+        }
+        */
     private: 
         Resource* resource; 
 };
