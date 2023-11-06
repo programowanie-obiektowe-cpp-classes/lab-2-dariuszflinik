@@ -6,21 +6,14 @@ class ResourceManager
 {
     public: 
         ResourceManager() : resource{new Resource} {}
+
+        ~ResourceManager() {delete resource;}
     
         double get(){
             return resource->get(); 
         }
-        ResourceManager(const ResourceManager& t){
-            resource = new Resource(*t.resource); 
-            }
+        ResourceManager(const ResourceManager& t) : resource(t.resource){}
         
-        ResourceManager& operator = (const ResourceManager& t)
-        {
-            resource = t.resource; 
-            return *this;
-        }
-
-        ~ResourceManager() {delete resource;}
         
     private: 
         Resource* resource; 
