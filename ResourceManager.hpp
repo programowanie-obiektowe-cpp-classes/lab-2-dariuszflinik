@@ -12,7 +12,7 @@ class ResourceManager
         double get(){
             return resource->get(); 
         }
-        ResourceManager& operator = (const ResourceManager t){return *this;}
+        ResourceManager(const ResourceManager& t) : resource{t.resource} {}
         /*
         ResourceManager& operator = (const ResourceManager& t)
         {
