@@ -6,8 +6,6 @@ class ResourceManager
 {
     public: 
         ResourceManager() : resource{new Resource} {}
-
-        ~ResourceManager() {delete resource;}
     
         double get(){
             return resource->get(); 
@@ -21,6 +19,8 @@ class ResourceManager
             resource = t.resource; 
             return *this;
         }
+
+        ~ResourceManager() {delete resource;}
         
     private: 
         Resource* resource; 
